@@ -20,6 +20,12 @@ This uses no RAM (strings stored in PROGMEM)
   }
 ```
 
+## Example Output
+
+```text
+# v1.01 /Users/username/Documents/Arduino/libraries/SerialID/examples/example_SerialID/example_SerialID.pde	Dec 22 2018 19:05:24
+```
+
 # MACROS
 
 ```C
