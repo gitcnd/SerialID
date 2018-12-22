@@ -7,7 +7,7 @@
 #define MorseLED_h
 
 #define SerialIDset(VER) const char VERSION[] PROGMEM=VER;
-#ifdef TEENSYDUINO
+#ifndef TEENSYDUINO
 #define SerialIDshow(BAUD) Serial.begin(BAUD); \
   while((!Serial)&&(micros()<2000000)); \
   Serial.println((__FlashStringHelper*)VERSION);
