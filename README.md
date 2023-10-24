@@ -66,14 +66,26 @@ This uses no RAM (strings stored in PROGMEM) on atmel
 3. Choose File => Examples => SerialID => hello
 4. Hit the "build" button an enjoy!
 
-(To use ENV_USERNAME/ENV_COMPUTERNAME - do this)
-1. Locate the platform.txt for the board you're using (e.g. %USERPROFILE%\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.14\platform.txt)
+## To use ENV_USERNAME/ENV_COMPUTERNAME
+1. Locate the platform.txt for the board you're using; e.g.
+```bash
+%USERPROFILE%\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.14\platform.txt
+```
 2. Find the line starting with this:   recipe.hooks.prebuild.1.pattern
 3. Insert the following line above it:-
-
+```bash
 recipe.hooks.prebuild.0.pattern.windows=cmd /c echo #define ENV_USERNAME %USERNAME% > "{build.source.path}\myenv.h" & echo #define ENV_COMPUTERNAME %COMPUTERNAME% >> "{build.source.path}\myenv.h"
-
-4. Save and restart Arduino.
-5. Note: this will create the new file myenv.h alongside every sketch you build
-6. If you do NOT want this feature, put this above the include:  #define NO_MYENV
+```
+4. Update your sketch - e.g.
+```bash
+#include <SerialID.h>
+SerialIDset( "\n# v1.00 " __FILE__ "\t" SERIALID_TAG );
+```
+5. Save and restart Arduino.
+6. Note: this will create the new file myenv.h alongside every sketch you build
+7. If you do NOT want this feature, put this above the include:
+```bash
+#define NO_MYENV
+#include <SerialID.h>
+```
 
