@@ -13,9 +13,13 @@ SerialIDset	KEYWORD1
 #######################################
 
 SerialIDshow	KEYWORD2
+SerialIDshowNS	KEYWORD2
+ENV_QUOTE	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-
+SERIALID_TAG	LITERAL1
+ENV_USERNAME	LITERAL1
+ENV_COMPUTERNAME	LITERAL1
