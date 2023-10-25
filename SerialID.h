@@ -29,9 +29,9 @@
   It requires you to modify your platform.txt file as follows:-
 
   1. Find this line:   recipe.hooks.prebuild.1.pattern
-  2. Insert the following line above it:-
+  2. Insert the following line above it (adjust BOTH "Documents\Arduino" parts if you installed in a non-default location):-
 
-recipe.hooks.prebuild.0.pattern.windows=cmd /c echo #define ENV_USERNAME %USERNAME% > "{build.source.path}\myenv.h" & echo #define ENV_COMPUTERNAME %COMPUTERNAME% >> "{build.source.path}\myenv.h"
+recipe.hooks.prebuild.0.pattern.windows=cmd /c echo #define ENV_USERNAME %USERNAME% > "%USERPROFILE%\Documents\Arduino\libraries\SerialID\myenv.h" & echo #define ENV_COMPUTERNAME %COMPUTERNAME% >> "%USERPROFILE%\Documents\Arduino\libraries\SerialID\myenv.h"
 
   3. Save and restart Arduino.
 
